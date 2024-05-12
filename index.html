@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    employee name <input type="text"><br><br>
+    Gross salary <input type="text" id="basic"><br><br>
+    num_of_unpaid_leaves <input type="text" id="num_of_unpaid_leaves"><br><br>
+    salary_per_day <input type="text" id="salary_per_day"><br><br>
+    <input type="button" id="button" value="submit"><br><br>
+    ta <input type="text" id="ta"><br><br>
+    da <input type="text" id="da"><br><br>
+    hra <input type="text" id="hra"><br><br>
+    pf <input type="text" id="pf"><br><br>
+    <!-- Deduction <input type="text" id="deduction"><br><br> -->
+    net <input type="text" id="net">
+</body>
+<script>
+    var button = document.getElementById("button")
+   
+    button.addEventListener("click",()=>{
+        var basic=document.getElementById("basic").value;
+        var ta,da,hra,pf,num_of_unpaid_leaves,salary_per_day,Deduction,net,unpaid_salary;
+        unpaid_salary = num_of_unpaid_leaves*salary_per_day
+        ta = basic*15/100;
+        da = basic*20/100;
+        hra = basic*50/100;     
+        pf = basic*8/100;
+        // Deduction = pf+unpaid_salary
+        net = parseInt(basic)+parseInt(ta)+parseInt(da)+parseInt(hra)-parseInt(pf)-parseInt(unpaid_salary);
+        document.getElementById("ta").value = ta;
+        document.getElementById("da").value = da;
+        document.getElementById("hra").value = hra;
+        document.getElementById("pf").value = pf;
+        // document.getElementById("deduction").value = Deduction;
+        document.getElementById("net").value = net;
+    })
+    
+    // const salary_per_day = 500;
+    // let emp_names = ["Pallavi","Harshit","Madhav","akash"];
+    // let num_of_unpaid_leaves = 0;
+    // let working_days = 30;
+    // let grade = "Trainee"
+
+    // function calculate_salary_to_be_paid(){
+    //     total_salary = working_days*salary_per_day-num_of_unpaid_leaves*salary_per_day;
+
+    //     return total_salary;
+    // }
+
+    // let salary = calculate_salary_to_be_paid();
+
+    // for( v in emp_names){
+    //     console.log(emp_names[v],total_salary);
+    // }
+
+        // simple intrest = prt/100
+        // rate of intrest = 100*intrest/pt
+        // principal = 100*intrest/rt
+        // time = 100*intrest/pr
+
+
+        // compund intrest = p*(1+r/100)**t
+
+        // profit= selling price - cost price
+        // loss = cp - sp
+
+        // % profit = (profit/cp)*100
+        // % loss  = loss/cp*100
+
+        
+
+
+
+</script>
+</html>
